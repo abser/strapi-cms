@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/hadithbooks",
+      "handler": "Hadithbook.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hadithbooks/count",
+      "handler": "Hadithbook.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hadithbooks/:id",
+      "handler": "Hadithbook.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/hadithbooks",
+      "handler": "Hadithbook.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/hadithbooks/:id",
+      "handler": "Hadithbook.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/hadithbooks/:id",
+      "handler": "Hadithbook.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

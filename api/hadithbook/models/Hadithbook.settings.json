@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "hadithbooks",
+  "info": {
+    "name": "hadithbook",
+    "description": "Hadith Books"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "bookname": {
+      "type": "string"
+    },
+    "hadiths": {
+      "collection": "hadith",
+      "dominant": true,
+      "via": "hadithbooks"
+    }
+  }
+}

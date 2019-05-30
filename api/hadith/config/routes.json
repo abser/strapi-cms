@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/hadiths",
+      "handler": "Hadith.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hadiths/count",
+      "handler": "Hadith.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hadiths/:id",
+      "handler": "Hadith.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/hadiths",
+      "handler": "Hadith.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/hadiths/:id",
+      "handler": "Hadith.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/hadiths/:id",
+      "handler": "Hadith.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

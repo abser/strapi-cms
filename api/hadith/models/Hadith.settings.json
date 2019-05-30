@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "hadiths",
+  "info": {
+    "name": "hadith",
+    "description": "Hadith Collection"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "hadith_en": {
+      "type": "text"
+    },
+    "hadithbooks": {
+      "collection": "hadithbook",
+      "via": "hadiths"
+    },
+    "hadith_bn": {
+      "type": "text"
+    },
+    "hadith_ar": {
+      "type": "text"
+    }
+  }
+}
