@@ -1,9 +1,9 @@
 {
   "connection": "default",
-  "collectionName": "hadithbooks",
+  "collectionName": "categories",
   "info": {
-    "name": "hadithbook",
-    "description": "Hadith Books"
+    "name": "category",
+    "description": "Hadith Category"
   },
   "options": {
     "increments": true,
@@ -11,10 +11,10 @@
     "comment": ""
   },
   "attributes": {
-    "bookname_en": {
+    "name_en": {
       "type": "string"
     },
-    "bookname_bn": {
+    "name_bn": {
       "type": "string"
     }
   }

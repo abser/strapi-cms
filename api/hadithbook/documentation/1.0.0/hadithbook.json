@@ -516,49 +516,21 @@
           "id": {
             "type": "string"
           },
-          "bookname": {
+          "bookname_en": {
             "type": "string"
           },
-          "hadiths": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "hadith_en": {
-                  "type": "string"
-                },
-                "hadithbooks": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "hadith_bn": {
-                  "type": "string"
-                },
-                "hadith_ar": {
-                  "type": "string"
-                }
-              }
-            }
+          "bookname_bn": {
+            "type": "string"
           }
         }
       },
       "NewHadithbook": {
         "properties": {
-          "bookname": {
+          "bookname_en": {
             "type": "string"
           },
-          "hadiths": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "bookname_bn": {
+            "type": "string"
           }
         }
       }

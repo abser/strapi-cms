@@ -1,3 +1,25 @@
+"""Hadith Category"""
+type Category {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name_en: String
+  name_bn: String
+}
+
+input CategoryInput {
+  name_en: String
+  name_bn: String
+}
+
+input createCategoryInput {
+  data: CategoryInput
+}
+
+type createCategoryPayload {
+  category: Category
+}
+
 input createHadithbookInput {
   data: HadithbookInput
 }
@@ -35,6 +57,14 @@ The `DateTime` scalar represents a date and time following the ISO 8601 standard
 """
 scalar DateTime
 
+input deleteCategoryInput {
+  where: InputID
+}
+
+type deleteCategoryPayload {
+  category: Category
+}
+
 input deleteHadithbookInput {
   where: InputID
 }
@@ -67,6 +97,11 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
+input editCategoryInput {
+  name_en: String
+  name_bn: String
+}
+
 input editFileInput {
   name: String
   hash: String
@@ -81,15 +116,16 @@ input editFileInput {
 }
 
 input editHadithbookInput {
-  bookname: String
-  hadiths: [ID]
+  bookname_en: String
+  bookname_bn: String
 }
 
 input editHadithInput {
   hadith_en: String
-  hadithbooks: [ID]
   hadith_bn: String
   hadith_ar: String
+  hadithbook: ID
+  category: ID
 }
 
 input editRoleInput {
@@ -132,7 +168,8 @@ type Hadith {
   hadith_en: String
   hadith_bn: String
   hadith_ar: String
-  hadithbooks(sort: String, limit: Int, start: Int, where: JSON): [Hadithbook]
+  hadithbook: Hadithbook
+  category: Category
 }
 
 """Hadith Books"""
@@ -140,20 +177,21 @@ type Hadithbook {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  bookname: String
-  hadiths(sort: String, limit: Int, start: Int, where: JSON): [Hadith]
+  bookname_en: String
+  bookname_bn: String
 }
 
 input HadithbookInput {
-  bookname: String
-  hadiths: [ID]
+  bookname_en: String
+  bookname_bn: String
 }
 
 input HadithInput {
   hadith_en: String
-  hadithbooks: [ID]
   hadith_bn: String
   hadith_ar: String
+  hadithbook: ID
+  category: ID
 }
 
 input InputID {
@@ -168,9 +206,12 @@ scalar JSON
 """The `Long` scalar type represents 52-bit integers"""
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Hadith | createHadithPayload | updateHadithPayload | deleteHadithPayload | Hadithbook | createHadithbookPayload | updateHadithbookPayload | deleteHadithbookPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Category | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Hadith | createHadithPayload | updateHadithPayload | deleteHadithPayload | Hadithbook | createHadithbookPayload | updateHadithbookPayload | deleteHadithbookPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
+  createCategory(input: createCategoryInput): createCategoryPayload
+  updateCategory(input: updateCategoryInput): updateCategoryPayload
+  deleteCategory(input: deleteCategoryInput): deleteCategoryPayload
   createHadith(input: createHadithInput): createHadithPayload
   updateHadith(input: updateHadithInput): updateHadithPayload
   deleteHadith(input: deleteHadithInput): deleteHadithPayload
@@ -199,6 +240,8 @@ type Mutation {
 }
 
 type Query {
+  category(id: ID!): Category
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
   hadith(id: ID!): Hadith
   hadiths(sort: String, limit: Int, start: Int, where: JSON): [Hadith]
   hadithbook(id: ID!): Hadithbook
@@ -221,6 +264,15 @@ input RoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input updateCategoryInput {
+  where: InputID
+  data: editCategoryInput
+}
+
+type updateCategoryPayload {
+  category: Category
 }
 
 input updateHadithbookInput {

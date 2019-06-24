@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/hadiths": {
+    "/categories": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Hadith"
+                    "$ref": "#/components/schemas/Category"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Hadith"
+          "Category"
         ],
         "parameters": [
           {
@@ -195,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Hadith"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -233,7 +233,7 @@
         },
         "summary": "",
         "tags": [
-          "Hadith"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -241,14 +241,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewHadith"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
         }
       }
     },
-    "/hadiths/count": {
+    "/categories/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -300,12 +300,12 @@
         },
         "summary": "",
         "tags": [
-          "Hadith"
+          "Category"
         ],
         "parameters": []
       }
     },
-    "/hadiths/{id}": {
+    "/categories/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -315,7 +315,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Hadith"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -353,7 +353,7 @@
         },
         "summary": "",
         "tags": [
-          "Hadith"
+          "Category"
         ],
         "parameters": [
           {
@@ -377,7 +377,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Hadith"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -415,7 +415,7 @@
         },
         "summary": "",
         "tags": [
-          "Hadith"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -423,7 +423,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewHadith"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
@@ -489,7 +489,7 @@
         },
         "summary": "",
         "tags": [
-          "Hadith"
+          "Category"
         ],
         "parameters": [
           {
@@ -508,7 +508,7 @@
   },
   "components": {
     "schemas": {
-      "Hadith": {
+      "Category": {
         "required": [
           "id"
         ],
@@ -516,64 +516,20 @@
           "id": {
             "type": "string"
           },
-          "hadith_en": {
+          "name_en": {
             "type": "string"
           },
-          "hadith_bn": {
+          "name_bn": {
             "type": "string"
-          },
-          "hadith_ar": {
-            "type": "string"
-          },
-          "hadithbook": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "bookname_en": {
-                "type": "string"
-              },
-              "bookname_bn": {
-                "type": "string"
-              }
-            }
-          },
-          "category": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name_en": {
-                "type": "string"
-              },
-              "name_bn": {
-                "type": "string"
-              }
-            }
           }
         }
       },
-      "NewHadith": {
+      "NewCategory": {
         "properties": {
-          "hadith_en": {
+          "name_en": {
             "type": "string"
           },
-          "hadith_bn": {
-            "type": "string"
-          },
-          "hadith_ar": {
-            "type": "string"
-          },
-          "hadithbook": {
-            "type": "string"
-          },
-          "category": {
+          "name_bn": {
             "type": "string"
           }
         }
@@ -582,7 +538,7 @@
   },
   "tags": [
     {
-      "name": "Hadith"
+      "name": "Category"
     }
   ]
 }
