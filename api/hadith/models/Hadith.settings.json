@@ -22,9 +22,6 @@
     },
     "hadithbook": {
       "model": "hadithbook"
-    },
-    "category": {
-      "model": "category"
     }
   }
 }

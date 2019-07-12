@@ -521,6 +521,31 @@
           },
           "name_bn": {
             "type": "string"
+          },
+          "hadithbooks": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "bookname_en": {
+                  "type": "string"
+                },
+                "bookname_bn": {
+                  "type": "string"
+                },
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -531,6 +556,12 @@
           },
           "name_bn": {
             "type": "string"
+          },
+          "hadithbooks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }

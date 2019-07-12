@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/24/2019 11:20:53 AM"
+    "x-generation-date": "07/12/2019 4:32:01 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3628,6 +3628,31 @@
           },
           "name_bn": {
             "type": "string"
+          },
+          "hadithbooks": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "bookname_en": {
+                  "type": "string"
+                },
+                "bookname_bn": {
+                  "type": "string"
+                },
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -3638,6 +3663,12 @@
           },
           "name_bn": {
             "type": "string"
+          },
+          "hadithbooks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -3671,22 +3702,12 @@
               },
               "bookname_bn": {
                 "type": "string"
-              }
-            }
-          },
-          "category": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
               },
-              "name_en": {
-                "type": "string"
-              },
-              "name_bn": {
-                "type": "string"
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -3705,9 +3726,6 @@
           },
           "hadithbook": {
             "type": "string"
-          },
-          "category": {
-            "type": "string"
           }
         }
       },
@@ -3724,6 +3742,31 @@
           },
           "bookname_bn": {
             "type": "string"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name_en": {
+                  "type": "string"
+                },
+                "name_bn": {
+                  "type": "string"
+                },
+                "hadithbooks": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -3734,6 +3777,12 @@
           },
           "bookname_bn": {
             "type": "string"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

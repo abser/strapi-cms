@@ -538,22 +538,12 @@
               },
               "bookname_bn": {
                 "type": "string"
-              }
-            }
-          },
-          "category": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
               },
-              "name_en": {
-                "type": "string"
-              },
-              "name_bn": {
-                "type": "string"
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -571,9 +561,6 @@
             "type": "string"
           },
           "hadithbook": {
-            "type": "string"
-          },
-          "category": {
             "type": "string"
           }
         }

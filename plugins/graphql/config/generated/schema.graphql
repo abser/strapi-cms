@@ -5,11 +5,13 @@ type Category {
   updated_at: DateTime!
   name_en: String
   name_bn: String
+  hadithbooks(sort: String, limit: Int, start: Int, where: JSON): [Hadithbook]
 }
 
 input CategoryInput {
   name_en: String
   name_bn: String
+  hadithbooks: [ID]
 }
 
 input createCategoryInput {
@@ -100,6 +102,7 @@ type deleteUserPayload {
 input editCategoryInput {
   name_en: String
   name_bn: String
+  hadithbooks: [ID]
 }
 
 input editFileInput {
@@ -118,6 +121,7 @@ input editFileInput {
 input editHadithbookInput {
   bookname_en: String
   bookname_bn: String
+  categories: [ID]
 }
 
 input editHadithInput {
@@ -125,7 +129,6 @@ input editHadithInput {
   hadith_bn: String
   hadith_ar: String
   hadithbook: ID
-  category: ID
 }
 
 input editRoleInput {
@@ -169,7 +172,6 @@ type Hadith {
   hadith_bn: String
   hadith_ar: String
   hadithbook: Hadithbook
-  category: Category
 }
 
 """Hadith Books"""
@@ -179,11 +181,13 @@ type Hadithbook {
   updated_at: DateTime!
   bookname_en: String
   bookname_bn: String
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
 }
 
 input HadithbookInput {
   bookname_en: String
   bookname_bn: String
+  categories: [ID]
 }
 
 input HadithInput {
@@ -191,7 +195,6 @@ input HadithInput {
   hadith_bn: String
   hadith_ar: String
   hadithbook: ID
-  category: ID
 }
 
 input InputID {

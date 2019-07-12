@@ -16,6 +16,11 @@
     },
     "name_bn": {
       "type": "string"
+    },
+    "hadithbooks": {
+      "collection": "hadithbook",
+      "via": "categories",
+      "dominant": true
     }
   }
 }

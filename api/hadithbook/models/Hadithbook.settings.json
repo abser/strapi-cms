@@ -16,6 +16,10 @@
     },
     "bookname_bn": {
       "type": "string"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "hadithbooks"
     }
   }
 }
